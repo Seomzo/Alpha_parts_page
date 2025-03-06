@@ -20,6 +20,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <Header />
       <main className="container mx-auto px-4 py-12">
+        <h1 className="text-3xl font-bold text-center mb-8">Alfa Romeo Parts</h1>
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {models.map((model) => (
             <CarModelCard key={model.model} model={model.model} image={model.image} years={model.years} />

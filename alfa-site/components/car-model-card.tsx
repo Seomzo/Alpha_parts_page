@@ -9,6 +9,9 @@ interface CarModelCardProps {
 }
 
 export default function CarModelCard({ model, image, years }: CarModelCardProps) {
+  // Ensure the model name is lowercase for URL construction
+  const modelLower = model.toLowerCase();
+  
   return (
     <div className="bg-white rounded-lg shadow-sm p-8 flex flex-col items-center">
       <Image
@@ -26,7 +29,7 @@ export default function CarModelCard({ model, image, years }: CarModelCardProps)
 
       <div className="grid grid-cols-3 gap-4 w-full max-w-xs">
         {years.map((year) => (
-          <Link key={year} href={`/${year}/${model.toLowerCase()}`}>
+          <Link key={year} href={`/${year}/${modelLower}`}>
             <Button variant="outline" className="w-full border-2 hover:bg-gray-50">
               {year}
             </Button>
